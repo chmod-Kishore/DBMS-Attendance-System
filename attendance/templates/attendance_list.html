@@ -1,0 +1,30 @@
+<!-- templates/attendance_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Attendance List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Example Student</td>
+                <td>YYYY-MM-DD</td>
+                <td>HH:MM:SS</td>
+            </tr>
+            <!-- More rows will be added dynamically -->
+        </tbody>
+    </table>
+</body>
+</html>

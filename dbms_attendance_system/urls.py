@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from attendance.views import attendance_list,homepage
 
 urlpatterns = [
+    path('',homepage,name='homepage'),
+    #path('',attendance_list,name='home'),
     path('admin/', admin.site.urls),
-    path('proj/', include('authentication.urls')),  # For login/registration
+   # path('proj/', include('authentication.urls')),  # For login/registration
     path('attendance/', include('attendance.urls')),  # For attendance APIs
 ]

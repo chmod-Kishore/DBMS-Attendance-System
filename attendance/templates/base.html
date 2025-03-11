@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %} <!-- Load static files at the top -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}QR Attendance{% endblock %}</title>
+
+    <!-- Corrected static file reference -->
     <link rel="stylesheet" href="{% static 'attendance/css/style.css' %}">
 </head>
 <body>
     <header>
         <h1>QR Attendance System</h1>
         <nav>
-            <a href="{% url 'index' %}">Home</a>
-            <a href="{% url 'login' %}">Login</a>
+            <ul>
+                
+            </ul>
         </nav>
     </header>
 
