@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Student Login{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h2>Student Login</h2>
+
+    <form method="POST" action="{% url 'student_login' %}">
+        {% csrf_token %}
+
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" class="register-btn">Login</button>
+    </form>
+
+    <p>New user? <a href="{% url 'student_register' %}">Register here</a></p>
+</div>
+{% endblock %}

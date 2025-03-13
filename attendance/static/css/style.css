@@ -1,0 +1,194 @@
+/* Full-page styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url("../images/homepage.jpg") no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+}
+
+/* Dark overlay for better text contrast */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Header remains at the top */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Center the main content */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for centered title */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px; /* Add space between the title and login link */
+}
+
+/* Styling for the login link */
+/* Center login form */
+.login-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Styling for form labels */
+.login-container label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+/* Input fields */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #9b59b6;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #222;
+    color: #fff;
+}
+
+/* Style the login button */
+.login-btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad); /* Gradient effect */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #8e44ad, #6c3483); /* Darker gradient */
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(142, 68, 173, 0.8);
+}
+
+.login-btn:active {
+    transform: scale(0.98); /* Slight press-down effect */
+}
+
+
+
+/* Footer stays at the bottom */
+footer {
+    margin-top: auto;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Style the registration form */
+.registration-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width: 400px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling for form labels */
+.registration-container label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+    text-align: left;
+}
+
+/* Input fields */
+.registration-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #9b59b6;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #222;
+    color: #fff;
+}
+
+/* Style the register button */
+.register-btn {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    width: 100%;
+}
+
+/* Hover effect */
+.register-btn:hover {
+    background: linear-gradient(135deg, #8e44ad, #6c3483);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(142, 68, 173, 0.8);
+}
+
+/* Click effect */
+.register-btn:active {
+    transform: scale(0.98);
+}

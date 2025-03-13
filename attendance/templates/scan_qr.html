@@ -1,0 +1,11 @@
+{% extends 'attendance/base.html' %}
+
+{% block title %}Scan QR Code{% endblock %}
+
+{% block content %}
+    <h2>Scan QR Code</h2>
+    <video id="qr-video" width="300" height="300"></video>
+    <p id="scan-result"></p>
+
+    <script src="{% static 'attendance/js/qr_scanner.js' %}"></script>
+{% endblock %}

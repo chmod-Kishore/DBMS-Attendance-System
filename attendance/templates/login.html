@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - QR Attendance</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <form method="POST">
+                {% csrf_token %}
+                <label for="userid">User ID:</label>
+                <input type="text" id="userid" name="userid" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 QR Attendance System</p>
+    </footer>
+</body>
+</html>
