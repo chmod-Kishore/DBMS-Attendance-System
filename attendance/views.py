@@ -55,9 +55,12 @@ def student_register(request):
 
 def student_login(request):
     if request.method == "POST":
-        student_id = request.POST.get("student_id")  # Ensure the correct field is used
+        student_id = request.POST.get("user_id")  # Ensure the correct field is used
+        print(f"Student id is: {student_id}")
         password = request.POST.get("password")
+        print(f"Password is: {password}")
         user = authenticate(student_id=student_id, password=password)  # Authenticate correctly
+        
 
         print(f"DEBUG: Authenticated User: {user}")  # Debugging
 
