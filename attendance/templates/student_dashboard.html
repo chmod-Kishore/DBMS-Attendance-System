@@ -1,15 +1,5 @@
-{% extends 'attendance/base.html' %}
-
-{% block title %}Student Dashboard{% endblock %}
-
-{% block content %}
-    <h2>Student Dashboard</h2>
-    <p>Your upcoming classes:</p>
-    <ul>
-        {% for class in classes %}
-            <li>{{ class.name }} - {{ class.time }}</li>
-        {% endfor %}
-    </ul>
-
-    <a href="{% url 'scan_qr' %}" class="btn">Scan QR Code for Attendance</a>
-{% endblock %}
+{% if user.is_authenticated %}
+    <h1>Hi, {{ user.username }}!</h1>
+{% else %}
+    <h1>Hi!</h1>
+{% endif %}

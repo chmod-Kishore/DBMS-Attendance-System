@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'attendance'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'dbms_attendance_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'attendance', 'templates')],
+        'DIRS': [BASE_DIR /'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,19 +76,16 @@ WSGI_APPLICATION = 'dbms_attendance_system.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-   # 'default': {
-  #      'ENGINE': 'django.db.backends.mysql',
-   #     'NAME': 'attendance_db',
-    #    'USER': 'root',   # Change this if needed
-     #   'PASSWORD': 'yourpassword',
-      #  'HOST': 'localhost',
-       # 'PORT': '3306',
-   # }
-   'default':{
-    'ENGINE':'django.db.backends.sqlite3',
-    'NAME':BASE_DIR / "db.sqlite3",
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'attendance_db',  # Use the correct MySQL database name
+        'USER': 'root',  # Your MySQL username
+        'PASSWORD': 'Kishore200#',  # Your MySQL password
+        'HOST': 'localhost',  # Keep as localhost
+        'PORT': '3306',  # Default MySQL port
+    }
 }
+
 
 
 # Password validation
@@ -106,6 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+
+AUTHENTICATION_BACKENDS = [
+    "attendance.backends.StudentBackend",  # Use custom Student authentication
+    "django.contrib.auth.backends.ModelBackend",  # Keep default Django auth for superusers
 ]
 
 
@@ -131,3 +135,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "attendance/static")]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+LOGIN_URL = "/attendance/student-login/"
+
+
+LOGIN_REDIRECT_URL = "/student-dashboard/"
+
+AUTH_USER_MODEL = 'attendance.Student'  # Use Student as the default user model
